@@ -1,13 +1,21 @@
+/* Background with a glowing effect */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: radial-gradient(circle, #ff758c, #ff7eb3);
   font-family: 'Arial', sans-serif;
   text-align: center;
   overflow: hidden;
+  animation: glow 2s infinite alternate;
+}
+
+/* Smooth glowing animation */
+@keyframes glow {
+  from { background: radial-gradient(circle, #ff758c, #ff5e6c); }
+  to { background: radial-gradient(circle, #ff7eb3, #ff3e6b); }
 }
 
 .container {
@@ -15,8 +23,14 @@ body {
   background: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 h1 {
@@ -24,6 +38,7 @@ h1 {
   color: #d32f2f;
 }
 
+/* Buttons */
 .buttons {
   margin-top: 20px;
   position: relative;
@@ -31,10 +46,10 @@ h1 {
 
 button {
   font-size: 1.5em;
-  padding: 10px 20px;
+  padding: 12px 25px;
   margin: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -42,19 +57,26 @@ button {
 .yes-button {
   background-color: #4caf50;
   color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .yes-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   background-color: #45a049;
 }
 
+/* "No" Button moves away */
 .no-button {
   background-color: #f44336;
   color: white;
   position: absolute;
 }
 
+.no-button:hover {
+  transform: scale(0.8);
+}
+
+/* GIF container */
 .gif_container img {
   max-width: 100%;
   height: auto;
@@ -62,12 +84,7 @@ button {
   margin-top: 20px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Hearts animation */
+/* Floating hearts animation */
 @keyframes floatingHearts {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(-100vh); opacity: 0; }
