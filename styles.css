@@ -96,3 +96,53 @@ button {
   color: red;
   animation: floatingHearts 5s linear infinite;
 }
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: red;
+  opacity: 0.7;
+  border-radius: 50%;
+  animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+
+/* Funny rejection messages */
+.funny-message {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #d32f2f;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeInOut 1.5s ease-in-out;
+}
+
+/* Pleading GIFs */
+.pleading-gif {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: auto;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+/* Fade in & out animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
